@@ -14,6 +14,11 @@ class PatientWebController extends Controller
         return view('dashboard');
     }
 
+    public function service()
+    {
+        return view('service');
+    }
+
     public function file()
     {
         $patients = Patient::with('files.insights')->get();

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\File;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -52,6 +53,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isAdmin(): bool
     {
         return $this->role === 'admin';
+    }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
     }
 
     public function isDoctor(): bool

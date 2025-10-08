@@ -40,7 +40,7 @@ class FileWebController extends Controller
     // Liste tous les fichiers
     public function all()
     {
-        $files = File::with('patient')->latest()->get();
+        $files = File::with('user')->latest()->get();
         return view('files.all', compact('files'));
     }
 
@@ -49,5 +49,14 @@ class FileWebController extends Controller
     {
         $file->load('insights');
         return view('files.show', compact('file'));
+    }
+
+    public function destroy(File $file){
+        $file = File::all()->where('id', $file->id)->first();
+        if (!$file) {
+            return redirect()->route('files.index')->with('error', 'Fichier non trouvé.');
+        }
+        $file->delete();
+        return redirect()->route('files.all')->with('success', 'Fichier supprimé avec succès.');
     }
 }
