@@ -13,7 +13,11 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'Inter':'Inter',
+                'montserrat': 'Montserrat',
+                satoshi: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             },
+            
         },
     },
 

@@ -1,12 +1,12 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/40 w-[75%] rounded-full mt-5 mx-auto border border-white shadow-md">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <img class="w-36" src="{{asset('img/medilens-ai-logo.png')}}" alt="">
                     </a>
                 </div>
 
@@ -16,13 +16,28 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('files.all')" :active="request()->routeIs('files.all')">
+                        {{ __('Your documents') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
+                        {{ __('Upload documents') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('questions.index')" :active="request()->routeIs('questions.index')">
+                        {{ __('Your questions') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-4 py-4 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">

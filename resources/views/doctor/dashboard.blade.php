@@ -9,7 +9,10 @@
                     {{ __("You're logged in as doctor") }}
                 </div>
             </div>
-            <a href="{{route('files.index')}}" class="text-black">Create your file</a>
+            <a href="{{ route('questions.index') }}"
+           class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            Répondre aux questions
+        </a>
         </div>
     </div>
 @endsection
