@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Medilens AI</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -47,8 +47,14 @@
                 @yield('content')
             </main>
         </div>
-        <footer class="bg-gray-800 text-gray-300 p-4 text-center text-sm">
-            © {{ date('Y') }} MediLens AI
+        <footer class="bg-[#FBF9FE] border-black/35 border-t text-black/70 font-satoshi font-semibold p-4 py-7 text-center text-sm">
+            <div class="max-w-7xl mx-auto flex justify-between">
+                <p>© {{ date('Y') }} MediLens AI </p>
+                <div class="flex gap-3">
+                    <p>My LinkedIn <a class="underline" target="_blank" href="https://www.linkedin.com/in/marwane-elhosni/">Marwane Elhosni</a></p>
+                    <p>My Github <a class="underline" target="_blank" href="https://github.com/theelh">Marwane Elhosni</a></p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

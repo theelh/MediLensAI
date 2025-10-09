@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Medilens AI</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -55,14 +55,55 @@
                 </nav>
             @endif
         </header>
-        <div class="flex z-20 items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-            <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-                Pricing
-            </main>
-        </div>
+        <div class="z-20 bg-gray-100/35 backdrop-blur-sm border border-white border-spacing-5 rounded-3xl flex flex-col items-center mt-7 justify-center px-4 py-[4rem]">
 
-        @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
-        @endif
+            <h1 class="text-3xl z-20 font-bold mb-8 text-gray-800 text-center">Choose Your Plan</h1>
+
+            <div class="grid z-20 grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+
+                <!-- ✅ Free Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Free Plan</h2>
+                    <p class="text-gray-600 mb-6">
+                        Access basic features for free.  
+                        Ideal for casual users.
+                    </p>
+                    <ul class="text-left text-gray-700 mb-6 space-y-2">
+                        <li>✔️ Basic consultation</li>
+                        <li>✔️ Limited file uploads</li>
+                        <li>❌ No advanced analysis</li>
+                        <li>❌ No priority support</li>
+                    </ul>
+
+                    <form action="{{ route('dashboard') }}" method="GET">
+                        <button type="submit"
+                            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
+                            Continue for Free
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 💎 Premium Plan -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl shadow-xl p-8 text-center">
+                    <h2 class="text-2xl font-semibold mb-4">Premium Plan</h2>
+                    <p class="text-blue-100 mb-6">
+                        Unlock all advanced features with the Premium plan.
+                    </p>
+                    <ul class="text-left mb-6 space-y-2">
+                        <li class="flex items-center"><i class="ph ph-star mr-2"></i> Full access to all AI analyses</li>
+                        <li class="flex items-center"><i class="ph ph-star mr-2"></i> Unlimited uploads</li>
+                        <li class="flex items-center"><i class="ph ph-star mr-2"></i> 24/7 priority support</li>
+                        <li class="flex items-center"><i class="ph ph-star mr-2"></i> Advanced dashboard</li>
+                    </ul>
+
+                    <form action="{{ route('subscription.create') }}" method="GET">
+                        <button type="submit"
+                            class="w-full bg-white hover:bg-gray-100 text-blue-700 font-semibold py-2 px-4 rounded-xl transition">
+                            Subscribe - $9.99 / month
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

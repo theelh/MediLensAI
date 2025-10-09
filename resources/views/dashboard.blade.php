@@ -55,7 +55,7 @@
                     <i class="ph ph-share-network p-2 rounded-xl shadow-md ml-3 border border-white text-[#3C1D88] text-[35px]"></i>
                 </div>
                 <h3 class="font-satoshi text-[24px] font-semibold mt-7">Workflow Assessment</h3>
-                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">We begin by examining your existing workflows to identify where AI can deliver the greatest impact.</p>
+                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">We start by analyzing your current medical and administrative workflows to uncover where AI can make the biggest difference — improving speed, accuracy, and clarity.</p>
                 <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#161615] shadow-md hover:shadow-lg">Step 1</p>
             </div>
             <div class="flex-col px-7 shadow-lg pb-16 pt-8 border border-white rounded-2xl bg-[#F4F4FF] items-start justify-items-start lg:flex-row relative z-30">
@@ -63,18 +63,18 @@
                     2.
                     <i class="ph ph-rocket-launch p-2 rounded-xl shadow-md ml-3 border border-white text-[#3C1D88] text-[35px]"></i>
                 </div>
-                <h3 class="font-satoshi text-[24px] font-semibold mt-7">Deploy with Confidence</h3>
-                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">Our team develops custom AI systems built around your goals, ensuring safe and reliable deployment.</p>
+                <h3 class="font-satoshi text-[24px] font-semibold mt-7">Custom AI Deployment</h3>
+                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">Our team designs and deploys tailored AI solutions that align with your healthcare goals, ensuring seamless, secure, and compliant integration within your environment.</p>
                 <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#161615] shadow-md hover:shadow-lg">Step 2</p>
             </div>
             <div class="flex-col px-7 shadow-lg pb-16 pt-8 border border-white rounded-2xl bg-[#F4F4FF] items-start justify-items-start lg:flex-row relative z-30">
                 <div class="flex items-center text-[35px]">
-                    1.
+                    3.
                     <i class="ph ph-share-network p-2 rounded-xl shadow-md ml-3 border border-white text-[#3C1D88] text-[35px]"></i>
                 </div>
-                <h3 class="font-satoshi text-[24px] font-semibold mt-7">Workflow Assessment</h3>
-                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">We begin by examining your existing workflows to identify where AI can deliver the greatest impact.</p>
-                <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#161615] shadow-md hover:shadow-lg">Step 1</p>
+                <h3 class="font-satoshi text-[24px] font-semibold mt-7">Continuous Optimization</h3>
+                <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">We monitor real-world results, refine the models, and adapt the system based on your feedback to guarantee lasting performance and trustworthy outcomes.</p>
+                <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#161615] shadow-md hover:shadow-lg">Step 3</p>
             </div>
         </div>
         <h2 class="font-satoshi text-[35px] text-center font-semibold mt-16">Our Technology</h2>
@@ -256,6 +256,88 @@ However, it does not provide diagnoses — it assists doctors by highlighting po
         </div>
         <div class="items-center justify-center mt-7 w-full flex">
             <button class="p-3 py-2 flex border-spacing-3 items-center z-20 bg-gray-100 border-2 font-semibold text-[#1c1629] font-satoshi text-[16px] border-white rounded-full"><span class="ph ph-envelope mr-2 text-[24px]"></span> Feel free to mail us for any enquiries :  <a href="mailto:meroelhosni123@gmail.com" class="lowercase underline font-satoshi ml-3 text-[16px] font-semibold">meroelhosni123@gmail.com</a></button>
+        </div>
+    </section>
+
+    <section class="relative bg-white py-[7rem] w-full mx-auto sm:px-6 lg:px-8">
+         <!-- Cercle en dégradé -->
+                <div class="absolute z-0 mx-auto inset-0 top-32 flex justify-center items-center">
+                    <div class="w-full h-[500px] rounded-full bg-gradient-to-tr from-gray-400/50 to-white blur-3xl opacity-70"></div>
+                </div>
+        <div class="flex z-20 text-center items-center justify-evenly">
+            <div class="mx-auto w-64 h-1.5 bg-gradient-to-t from-white via-[#BFB4D9] to-[#BFB4D9] rounded-full"></div>
+            <h2 class="text-[44px]  font-normal text-[#1C1629] mb-6">Process Is Performance</h2>
+            <div class="mx-auto w-64 h-1.5 bg-gradient-to-t from-white via-[#BFB4D9] to-[#BFB4D9] rounded-full"></div>
+        </div>
+        <div class="flex z-20 w-full mt-5 gap-5 justify-between max-w-6xl mx-auto">
+            <div class="max-w-[40%] z-20">
+                <img class="rounded-xl shadow-md shadow-black/20 " src="{{asset('img/doctor-from-future-conce.jpg')}}" alt="">
+            </div>
+            <div class="z-20">
+                <video autoplay muted loop playsinline class="w-full shadow-md shadow-black/20 rounded-xl h-full object-cover z-0">
+                    <source src="{{ asset('videos/quote-sec22.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="flex gap-5 z-20 mt-5 w-full mx-auto max-w-6xl">
+            <div class="flex-col px-7 shadow-lg pb-16 border-spacing-5 pt-8 border border-white rounded-2xl bg-[#F4F4FF] items-start justify-items-start lg:flex-row relative z-30">
+                <a href="https://www.linkedin.com/in/marwane-elhosni/" target="_blank">
+                    <div class="flex items-center text-[35px]">
+                        <i class="ph ph-browser p-2 rounded-xl shadow-md mr-3 border border-white text-[#3C1D88] text-[35px]"></i>
+                        <h3 class="font-satoshi text-[24px] font-semibold">Product designer</h3>
+                    </div>
+                    <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">looking for a product designer who really cares about the user experience and a team player who shapes our product</p>
+                    <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#664BA1] shadow-md hover:shadow-lg">+2 years exp</p>
+                </a>
+            </div>
+            <div class="flex-col px-7 shadow-lg pb-16 border-spacing-5 pt-8 border border-white rounded-2xl bg-[#F4F4FF] items-start justify-items-start lg:flex-row relative z-30">
+                <a href="https://www.linkedin.com/in/marwane-elhosni/" target="_blank">
+                    <div class="flex items-center text-[35px]">
+                        <i class="ph ph-code p-2 rounded-xl shadow-md mr-3 border border-white text-[#3C1D88] text-[35px]"></i>
+                        <h3 class="font-satoshi text-[24px] font-semibold">Full stack developer</h3>
+                    </div>
+                    <p class="text-[16px] mt-3 text-start font-Inter text-[#1c1629]">looking for a back-end developer who have knowledge on dealing with complex codebase and who can communicate as a team</p>
+                    <p class="inline-flex mt-7 space-x-2 px-6 py-2 rounded-full border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#664BA1] shadow-md hover:shadow-lg">+2 years exp</p>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-2xl z-20 mt-5 flex gap-7 justify-center mx-auto">
+            {{-- Add Contact route --}}
+            <div class="p-1 z-20 border-2 shadow-sm hover:bg-white/30 border-gray-300/50 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out">
+                <a href="{{ route('questions.create') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-[#391986] hover:bg-none focus:outline-none transition ease-in-out duration-150">
+                Contact us now
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="relative bg-white py-[9rem] w-full mx-auto sm:px-6 lg:px-8">
+        <div class="relative items-center justify-center flex flex-col bg-gray-100 max-w-5xl mx-auto shadow-md shadow-black/35 border border-white border-spacing-5 py-12 rounded-3xl">
+            <!-- Cercle en dégradé -->
+            <div class="absolute z-0 mx-auto inset-0 top-20 flex justify-center items-center">
+                <div class="w-full h-[200px] rounded-full bg-gradient-to-tr from-gray-400/50 to-white blur-3xl opacity-70"></div>
+            </div>
+            <div class="flex flex-col z-20">
+                <h2 class="text-[44px] text-center z-50 font-normal text-[#1C1629] mb-6">What you still waiting!!</h2>
+            </div>
+            <p class="text-center font-Inter z-20 flex max-w-2xl">
+                Ready to transform healthcare with intelligent insights? MediLens AI helps you unlock the power of medical data — saving time, reducing errors, and accelerating better patient outcomes.
+            </p>
+            <p class="mt-7 space-x-2 px-6 py-2 rounded-xl border border-white/30 backdrop-blur-sm font-Inter bg-white/20 hover:bg-white/30 transition duration-300 text-[15px] font-semibold text-[#664BA1] flex items-center shadow-md hover:shadow-lg"><i class="ph ph-money text-xl mr-2"></i>100% safe payment</p>
+            {{-- payment procees --}}
+            <div class="p-1 border-2 mt-5 z-20 shadow-sm border-white rounded-full hover:scale-105 transition-transform duration-300 ease-in-out">
+                @if (auth()->user()->is_subscribed)
+                    <a href="{{ route('subscription.show') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-[#391986] hover:bg-none focus:outline-none transition ease-in-out duration-150">
+                        Manager you plan
+                        <i class="ph ph-arrow-right text-[26px]  text-white font-semibold ml-3 text-lg"></i>
+                </a>
+                @else
+                    <a href="{{ route('subscription.choose') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-[#391986] hover:bg-none focus:outline-none transition ease-in-out duration-150">
+                    <i class="ph ph-crown text-[26px]  text-white font-semibold mr-3 text-lg"></i>
+                    Get your pro plan
+                    </a>
+                @endif
+            </div>
         </div>
     </section>
 @endsection

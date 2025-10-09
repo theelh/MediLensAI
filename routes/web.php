@@ -11,13 +11,24 @@ use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SubscriptionController;
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/pricing', [WelcomeController::class, 'pricin'])->name('pricing');
+Route::get('/about', [WelcomeController::class, 'about'])->name('about');
+Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [WelcomeController::class, 'send'])->name('contact.send');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/plans', [SubscriptionController::class, 'Chooseplans'])->name('subscription.choose');
+    Route::get('/subscribe', [SubscriptionController::class, 'createCheckoutSession'])->name('subscription.create');
+    Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
+    Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+    Route::get('/subscription/cancelPlan', [SubscriptionController::class, 'cancelPlan'])->name('subscription.cancelPlan');
+    Route::get('/subscription/show', [SubscriptionController::class, 'show'])->name('subscription.show');
 
     // Question & Answer routes
     Route::resource('questions', QuestionController::class)->only(['index','create','store','show']);

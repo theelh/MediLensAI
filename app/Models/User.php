@@ -26,6 +26,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'role',
         'doctor_certificate',
         'is_verified_doctor',
+        'is_subscribed'
+    ];
+
+    protected $casts = [
+        'is_subscribed' => 'boolean',
     ];
 
     /**

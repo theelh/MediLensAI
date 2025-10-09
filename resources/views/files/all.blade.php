@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
-<div class="max-w-5xl z-20 mx-auto">
+<div class="max-w-[80%] p-7 rounded-3xl backdrop-blur-sm bg-white/25 border border-white border-spacing-5 z-20 mx-auto">
     <h2 class="text-2xl font-semibold mb-4">📂 File Uploaded</h2>
     {{-- Formulaire d’upload --}}
     <div class="bg-white p-6 rounded-lg shadow mb-6">
@@ -30,7 +30,7 @@
                 <tr class="border-b hover:bg-gray-50">
                     <td class="p-3">{{ $file->id }}</td>
                     <td class="p-3">{{ $file->filename }}</td>
-                    <td class="p-3">{{ $file->uploaded_by->metadata['name'] ?? '—' }}</td>
+                    <td class="p-3">{{ auth()->user()->name }}</td>
                     <td class="p-3">
                         @if($file->status === 'done')
                             <span class="text-green-600 font-semibold">✅ Finished</span>

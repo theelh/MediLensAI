@@ -9,23 +9,36 @@ use App\Jobs\ProcessUploadedFile;
 
 class FileWebController extends Controller
 {
+    // List all files for the logged-in user
     public function index()
     {
         $files = File::with('insights')->latest()->get();
         return view('files.index', compact('files'));
     }
 
+    // Store a newly uploaded file
     public function store(Request $req)
     {
+        $user = auth()->user();
+
+        // Limit free plan users to 3 uploads
+        if (!$user->is_subscribed) {
+            $uploadedCount = File::where('uploaded_by', $user->id)->count();
+
+            if ($uploadedCount >= 3) {
+                return redirect()->route('files.index')
+                    ->with('error', 'Limit reached: Free plan users can upload up to 3 files only.');
+            }
+        }
+
         $req->validate([
-            'file' => 'required|file|max:10240'
+            'file' => 'required|file|max:10240' // max 10MB
         ]);
 
         $path = $req->file('file')->store('uploads', 'public');
 
         $file = File::create([
-            'patient_id' => null,
-            'uploaded_by' => auth()->id() ?? 1, // fallback test
+            'uploaded_by' => $user->id,
             'filename' => $req->file('file')->getClientOriginalName(),
             'path' => $path,
             'mime' => $req->file('file')->getMimeType(),
@@ -34,29 +47,37 @@ class FileWebController extends Controller
 
         ProcessUploadedFile::dispatch($file);
 
-        return redirect()->route('files.index')->with('success', 'Fichier uploadé avec succès.');
+        return redirect()->route('files.index')
+            ->with('success', 'File uploaded successfully.');
     }
 
-    // Liste tous les fichiers
+    // List all files for admin or management
     public function all()
     {
         $files = File::with('user')->latest()->get();
         return view('files.all', compact('files'));
     }
 
-    // Détails d'un fichier
+    // Show details of a specific file
     public function show(File $file)
     {
         $file->load('insights');
         return view('files.show', compact('file'));
     }
 
-    public function destroy(File $file){
-        $file = File::all()->where('id', $file->id)->first();
-        if (!$file) {
-            return redirect()->route('files.index')->with('error', 'Fichier non trouvé.');
+    // Delete a file
+    public function destroy(File $file)
+    {
+        $fileRecord = File::find($file->id);
+
+        if (!$fileRecord) {
+            return redirect()->route('files.index')
+                ->with('error', 'File not found.');
         }
-        $file->delete();
-        return redirect()->route('files.all')->with('success', 'Fichier supprimé avec succès.');
+
+        $fileRecord->delete();
+
+        return redirect()->route('files.all')
+            ->with('success', 'File deleted successfully.');
     }
 }
