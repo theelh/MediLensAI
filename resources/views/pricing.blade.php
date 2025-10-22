@@ -75,12 +75,37 @@
                         <li>❌ No priority support</li>
                     </ul>
 
-                    <form action="{{ route('dashboard') }}" method="GET">
-                        <button type="submit"
-                            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
-                            Continue for Free
-                        </button>
-                    </form>
+                    @if (auth()->check())
+                        @if (auth()->user()->role === 'doctor')
+                            <form action="{{ route('doctor.dashboard') }}" method="GET">
+                                <button type="submit"
+                                    class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
+                                    Continue for Free
+                                </button>
+                            </form>
+                        @elseif (auth()->user()->role === 'patient')
+                            <form action="{{ route('dashboard') }}" method="GET">
+                                <button type="submit"
+                                    class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
+                                    Continue for Free
+                                </button>
+                            </form>
+                        @elseif (auth()->user()->role === 'admin')
+                            <form action="{{ route('admin.dashboard') }}" method="GET">
+                                <button type="submit"
+                                    class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
+                                    Continue for Free
+                                </button>
+                            </form>
+                        @endif
+                        @else
+                        <form action="{{ route('login') }}" method="GET">
+                            <button type="submit"
+                                class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-xl transition">
+                                Continue for Free
+                            </button>
+                        </form>
+                    @endif
                 </div>
 
                 <!-- 💎 Premium Plan -->

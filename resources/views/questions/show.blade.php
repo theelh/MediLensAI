@@ -5,15 +5,19 @@
 <div class=" w-[52vw] shadow-xl shadow-black/30 bg-white rounded-xl z-20 mx-auto p-6">
     <h1 class="text-2xl font-bold">{{ $question->title }}</h1>
     <p class="mb-4">{{ $question->body }}</p>
+    <p>Visibility : {{$question->visibility}}</p>
 
-    <h2 class="text-xl mt-6 font-semibold">Réponses :</h2>
+    <h2 class="text-xl mt-6 font-semibold">Answer :</h2>
     @forelse($question->answers as $answer)
         <div class="border p-3 rounded mb-2 bg-gray-100">
             <p>{{ $answer->body }}</p>
-            <p class="text-sm text-gray-600">Répondu par Dr. {{ $answer->doctor->name }}</p>
+            <div class="flex items-center mt-2">
+                <p class="text-sm text-gray-600">Answred by Dr. {{ $answer->doctor->name }}</p>
+                <img class="w-4 h-4 ml-2" src="{{ asset('svg/download.svg') }}" />
+            </div>
         </div>
     @empty
-        <p>Aucune réponse pour le moment.</p>
+        <p>No response yet.</p>
     @endforelse
 
     @if(auth()->check() && auth()->user()->role === 'doctor')

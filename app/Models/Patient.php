@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\File;
 use App\Models\Insight;
+use App\Models\User;
 
 class Patient extends Model
 {

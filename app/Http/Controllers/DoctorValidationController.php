@@ -23,6 +23,7 @@ class DoctorValidationController extends Controller
     public function validateDoctor(User $user)
     {
         $user->is_verified_doctor = true;
+        $user->is_subscribed = true;
         $user->save();
 
         return redirect()->back()->with('success', 'Doctor validated succefully.');
@@ -31,6 +32,7 @@ class DoctorValidationController extends Controller
     public function unvalidateDoctor(User $user): RedirectResponse
     {
         $user->is_verified_doctor = false;
+        $user->is_subscribed = false;
         $user->save();
 
         return redirect()->back()->with('success', 'Doctor unvalidated succefully.');

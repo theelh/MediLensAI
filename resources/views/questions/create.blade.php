@@ -19,7 +19,7 @@
         @csrf
 
         <div>
-            <label for="title" class="block font-semibold">Titre de la question :</label>
+            <label for="title" class="block font-semibold">Question title :</label>
             <input type="text" name="title" id="title"
                    class="w-full border rounded p-2"
                    placeholder="Ex: Quels sont les symptômes de la grippe ?" 
@@ -27,21 +27,31 @@
         </div>
 
         <div>
-            <label for="body" class="block font-semibold">Détails :</label>
+            <label for="body" class="block font-semibold">Details :</label>
             <textarea name="body" id="body" rows="5"
                       class="w-full border rounded p-2"
-                      placeholder="Expliquez vos symptômes ou votre question en détail..."
+                      placeholder="Explain your symptoms or question in detail..."
                       required></textarea>
+        </div>
+
+        <!-- ✅ Choix Public ou Privée -->
+        <div>
+            <label for="visibility" class="block font-semibold">Question visibility :</label>
+            <select name="visibility" id="visibility"
+                    class="w-full border rounded p-2 bg-white">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
         </div>
 
         <div>
             <button type="submit"
                     class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Publier ma question
+                Submit question
             </button>
             <a href="{{ route('questions.index') }}" 
                class="ml-3 text-gray-600 hover:underline">
-               Annuler
+               Cancel
             </a>
         </div>
     </form>

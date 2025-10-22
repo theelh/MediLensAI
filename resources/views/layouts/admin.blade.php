@@ -18,6 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-[100%] object-cover z-0">
+                <source src="{{ asset('videos/6917913_Motion_Graphics_Motion_Graphic_3840x2160.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             @include('layouts.adminav')
 
             <!-- Page Heading -->
@@ -29,13 +33,48 @@
                 </header>
             @endisset
 
+            @if (session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: '{{ session('success') }}',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        });
+                    });
+                </script>
+                @elseif (session('error'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: '{{ session('error') }}',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        });
+                    });
+                </script>
+            @endif
+
             <!-- Page Content -->
-            <main>
+            <main class="relative py-[9rem] px-4 z-10 ">
                 @yield('content')
             </main>
         </div>
-        <footer class="bg-gray-800 text-gray-300 p-4 text-center text-sm">
-            © {{ date('Y') }} MediLens AI
+        <footer class="bg-[#FBF9FE] border-black/35 border-t text-black/70 font-satoshi font-semibold p-4 py-7 text-center text-sm">
+            <div class="max-w-7xl mx-auto flex justify-between">
+                <p>© {{ date('Y') }} MediLens AI </p>
+                <div class="flex gap-3">
+                    <p>My LinkedIn <a class="underline" target="_blank" href="https://www.linkedin.com/in/marwane-elhosni/">Marwane Elhosni</a></p>
+                    <p>My Github <a class="underline" target="_blank" href="https://github.com/theelh">Marwane Elhosni</a></p>
+                </div>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

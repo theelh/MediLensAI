@@ -61,7 +61,7 @@ class RegisteredUserController extends Controller
         } else {
             // Pour les patients, connexion directe
             Auth::login($user);
-            return redirect()->route('patient.dashboard');
+            return redirect()->route('dashboard');
         }
     }
 }
