@@ -175,7 +175,7 @@
                 <div class="max-w-6xl flex z-20 justify-between mx-auto">
                     <h2 class="text-[44px] z-20 font-normal text-[#1C1629] mb-6 mt-6">Questions answered</h2>
                     <div class="p-1 border-2 z-20 border-white rounded-full hover:scale-105 transition-transform duration-300 ease-in-out">
-                        <a href="{{ route('questions.create') }}" class="inline-flex items-center px-4 py-2 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-medium font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-gray-400 focus:outline-none transition ease-in-out duration-150">
+                        <a href="{{ route('contact') }}" class="inline-flex items-center px-4 py-2 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-medium font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-gray-400 focus:outline-none transition ease-in-out duration-150">
                         Contact us now
                         </a>
                     </div>
@@ -359,7 +359,7 @@ However, it does not provide diagnoses — it assists doctors by highlighting po
         <div class="max-w-2xl z-20 mt-5 flex gap-7 justify-center mx-auto">
             {{-- Add Contact route --}}
             <div class="p-1 z-20 border-2 shadow-sm hover:bg-white/30 border-gray-300/50 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out">
-                <a href="{{ route('questions.create') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-[#391986] hover:bg-none focus:outline-none transition ease-in-out duration-150">
+                <a href="{{ route('contact') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-[#391986] hover:bg-none focus:outline-none transition ease-in-out duration-150">
                 Contact us now
                 </a>
             </div>

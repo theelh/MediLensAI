@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\File;
+use App\Models\Comments;
+use App\Models\Like;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -73,5 +75,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isPatient(): bool
     {
         return $this->role === 'patient';
+    }
+
+    public function comments()
+{
+    return $this->hasMany(Comments::class);
+}
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }

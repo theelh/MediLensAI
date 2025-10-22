@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\File;
+use App\Models\Patient;
+use App\Models\User;
 
 class Insight extends Model
 {
@@ -30,6 +32,6 @@ class Insight extends Model
     // Pour accéder au patient depuis l’insight
     public function patient()
     {
-        return $this->hasOneThrough(Patient::class, File::class, 'id', 'id', 'file_id', 'patient_id');
+        return $this->hasOneThrough(Patient::class, File::class, 'id', 'file_id', 'patient_id');
     }
 }

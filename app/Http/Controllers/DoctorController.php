@@ -28,6 +28,7 @@ class DoctorController extends Controller
         $user->doctor_certificate = $path;
         $user->role = 'doctor'; // il devient "docteur en attente de validation"
         $user->is_verified_doctor = false;
+        $user->is_subscribed = true; // Give the full access to doctor features
         $user->save();
 
         return redirect()->back()->with('success', 'Certificat envoyé. En attente de validation par un administrateur.');

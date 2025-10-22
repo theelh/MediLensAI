@@ -17,18 +17,23 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('files.all')" :active="request()->routeIs('files.all')">
-                        {{ __('Your documents') }}
+                    <x-nav-link :href="route('patient.feed')" :active="request()->routeIs('patient.feed')">
+                        {{ __('Question feed') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
-                        {{ __('Upload documents') }}
+                    <x-nav-link :href="route('files.feed')" :active="request()->routeIs('files.feed')">
+                        {{ __('Poste feed') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('files.all')" :active="request()->routeIs('files.all')">
+                        {{ __('Documents list') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('questions.index')" :active="request()->routeIs('questions.index')">
-                        {{ __('Your questions') }}
+                        {{ __('Questions list') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -37,7 +42,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-4 py-4 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-4 py-3 border border-transparent shadow-lg shadow-black/35 border-[#8264CA] text-md leading-4 font-bold font-Inter rounded-full text-gray-100 bg-gradient-to-r from-[#391986] to-[#6D54A7] hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">

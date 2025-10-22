@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
+use App\Models\User;
 
 class SubscriptionController extends Controller
 {
@@ -12,6 +13,22 @@ class SubscriptionController extends Controller
     public function choosePlans()
     {
         return view('subscription.choose');
+    }
+
+    // Show all users with subscription status
+    public function index()
+    {
+        $users = User::latest()->paginate(15);
+        return view('admin.subscriptions.index', compact('users'));
+    }
+
+    // Toggle subscription status
+    public function toggle(User $user)
+    {
+        $user->is_subscribed = !$user->is_subscribed;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Subscription status updated successfully.');
     }
 
     // Show the user's current subscription

@@ -21,7 +21,7 @@
 
     <body class="font-sans pt-[2rem] bg-gray-100 antialiased">
         <div class="min-h-screen ">
-            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-[100%] object-cover z-0">
                 <source src="{{ asset('videos/6917913_Motion_Graphics_Motion_Graphic_3840x2160.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -33,9 +33,37 @@
                 @include('layouts.navigation')
             @endif
 
+            @if (session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: '{{ session('success') }}',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        });
+                    });
+                </script>
+                @elseif (session('error'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: '{{ session('error') }}',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        });
+                    });
+                </script>
+            @endif
+
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white shadow">
+                <header class="bg-white z-20 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         @yield('header')
                     </div>
@@ -43,7 +71,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="z-20">
                 @yield('content')
             </main>
         </div>
@@ -56,5 +84,6 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

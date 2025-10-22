@@ -14,10 +14,16 @@ class Answer extends Model
     {
         return $this->belongsTo(Question::class);
     }
+    
 
     public function doctor()
     {
         return $this->belongsTo(User::class, 'doctor_id');
     }
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }
 
